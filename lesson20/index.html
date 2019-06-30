@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson20-表单下拉框</title>
+    <style>
+        select{
+            width: 210px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="myApp">
+        <select v-model="likeNBAStar">
+            <option value="科比">科比</option>
+            <option value="詹姆斯">詹姆斯</option>
+            <option value="哈登">哈登</option>
+            <option value="库里">库里</option>
+            <option value="杜兰特">杜兰特</option>
+        </select>
+        <select v-model="likeNBAStars" multiple>
+            <option value="科比">科比</option>
+            <option value="詹姆斯">詹姆斯</option>
+            <option value="哈登">哈登</option>
+            <option value="库里">库里</option>
+            <option value="杜兰特">杜兰特</option>
+        </select>
+        <p>你最喜欢的明星是{{likeNBAStar}}</p>
+        <p>你最喜欢的明星有{{likeNBAStars}}</p>
+    </div>
+    <script>
+        var myApp=new Vue({
+           el:'#myApp',
+           data:{
+               likeNBAStar:null,
+               likeNBAStars:[]
+           },
+           methods:{
+
+           }
+        });
+    </script>
+</body>
+</html>

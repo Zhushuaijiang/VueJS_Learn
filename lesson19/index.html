@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson19-表单单选按钮</title>
+</head>
+<body>
+<div id="myApp">
+    <h1>表单 单选框</h1>
+    <input type="radio" id="man" value="男" v-model="sex">
+    <label for="man">男</label>
+    <input type="radio" id="woman" value="女" v-model="sex">
+    <label for="woman">女</label>
+    <input type="radio" id="unkown" value="未知" v-model="sex">
+    <label for="unkown">未知</label>
+    <p>你选择的性别是：{{sex}}</p>
+</div>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            sex:""
+        }
+    });
+</script>
+</body>
+</html>

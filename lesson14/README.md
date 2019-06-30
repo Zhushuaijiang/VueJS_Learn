@@ -1,0 +1,37 @@
+##列表渲染
+
+#知识点
+**  v-for
+循环数据原属，整理内容到页面上
+
+--html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson14-列表渲染</title>
+</head>
+<body>
+    <div id="myApp">
+        <ul>
+            <li v-for="(game,index) in games">{{index}} {{game.title}} / 售价：{{game.price}}</li>
+        </ul>
+    </div>
+    <script>
+        var myApp=new Vue({
+           el:'#myApp',
+            data:{
+               games: [
+                    {title:"我的世界1",price:100},
+                    {title:"我的世界2",price:200},
+                    {title:"我的世界3",price:300}
+               ]
+            },
+        });
+    </script>
+</body>
+</html>
+
+-end html

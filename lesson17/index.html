@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson17-表单控件列表</title>
+</head>
+<body>
+<div id="myApp">
+    <h1>表单控件绑定</h1>
+    <input type="text" v-model="message" placeholder="请编辑">
+    <p>Message is {{message}}</p>
+</div>
+<script>
+    var myApp=new Vue({
+       el:'#myApp',
+       data:{
+           message:"3123"
+       },
+        methods:{
+
+        }
+    });
+</script>
+</body>
+</html>
