@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>课程06-过滤器</title>
+
+</head>
+<body>
+<div id="myApp">
+    <p>{{message}}</p>
+    <p>{{message | toupper tolower}}</p>
+    <p>现在vue.js学习进度{{num}}({{num | topercentage}}).</p>
+</div>
+
+<script>
+   var myApp=new Vue({
+       el:"#myApp",
+       data:{
+           message:'hello vue.js',
+           num:0.3
+
+       },
+       filters:{
+           toupper:function (value) {
+               return value.toUpperCase();
+           },
+           tolower:function (value) {
+               return value.tolower();
+           },
+           topercentage:function (value) {
+               return value * 100 +"%"
+           }
+       }
+   });
+</script>
+
+</body>
+</html>

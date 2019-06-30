@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson07-计算属性</title>
+</head>
+<body>
+<div id="myApp">
+    {{priceUSD}}美元={{priceJPY}}日元={{priceRMB}}人民币
+</div>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            priceUSD:1
+        },
+        computed:{
+            priceRMB:function () {
+                return this.priceUSD * 6.865;
+            },
+            priceJPY:function(){
+                return this.priceUSD * 107.88;
+            },
+        },
+    });
+</script>
+</body>
+</html>

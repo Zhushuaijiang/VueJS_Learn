@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>课程03-处理用户输入</title>
+</head>
+<body>
+<div id="myApp">
+    <p>你最新欢的游戏是:{{mygame}}</p>
+    <input v-model="mygame">
+</div>
+<script>
+    var myApp=new Vue({
+        el:'#myApp',
+        data:{
+            mygame:'超级玛丽'
+        }
+    });
+</script>
+</body>
+</html>

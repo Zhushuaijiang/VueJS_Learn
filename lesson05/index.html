@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>课程05-组件</title>
+
+</head>
+<body>
+<div id="myApp">
+    <ul>
+        <game-item v-for="item in games" v-bind:game0="item"></game-item>
+    </ul>
+</div>
+
+<script>
+    /*--组件定义，game-item*/
+    Vue.component('game-item',{
+        props:['game0'],
+        template:'<li>{{game0.title}}</li>'
+    });
+    var myApp = new Vue({
+            el: '#myApp',
+            data:{ games: [{
+                title: '斗地主1',
+            }, {
+                title: '斗地主2',
+            }, {
+                title: '斗地主3',
+            }]
+            }
+        });
+</script>
+
+</body>
+</html>
