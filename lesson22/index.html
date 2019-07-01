@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson22-组件的基础</title>
+</head>
+<body>
+<div id="myApp">
+    <today-weather></today-weather>
+
+
+</div>
+<script>
+    Vue.component('today-weather',{
+        template:'<div>今天下大雨！出不去门</div>'
+    });
+    var myApp=new Vue({
+        el:'#myApp'
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+#slot插槽
+    # slot
+    **slot
+    slot 是父组件与子组件的通讯方式. 可以将父组件的内容显示在子组件当中
+
+--html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson30-slot插槽</title>
+</head>
+<body>
+    <div id="myApp">
+        <say-to pname="zsj1">test1</say-to>
+        <say-to pname="zsj2">test2</say-to>
+        <say-to pname="zsj3">test3</say-to>
+    </div>
+    <script>
+        Vue.component('say-to',{
+            props:['pname'],
+            template:'<div>'+
+                '你好.<strong>{{pname}}</strong>'+
+                '<slot></slot>'+
+                '</div>',
+        });
+        var myApp=new Vue({
+           el:'#myApp'
+        });
+    </script>
+</body>
+</html>
+
+---end

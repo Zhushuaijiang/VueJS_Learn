@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1">
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <title>lesson26-传递数据</title>
+</head>
+<body>
+    <div id="myApp">
+        <h1>你的成绩评价</h1>
+        <test-result :score="50"></test-result>
+        <test-result :score="65"></test-result>
+        <test-result :score="90"></test-result>
+        <test-result :score="100"></test-result>
+    </div>
+    <script>
+        Vue.component('test-result',{
+            props:['score'],
+            template:'<div><strong>{{score}}分。{{testResult}}</strong></div>',
+            computed:{
+                testResult:function () {
+                    var strResult="";
+                    if(this.score<60){
+                        strResult="不及格";
+                    }else if(this.score<90){
+                        strResult="中等生";
+                    }else {
+                        strResult="优秀生";
+                    }
+                    return strResult;
+                }
+            }
+        });
+        var myApp=new Vue({
+           el:'#myApp',
+           data:{
+           }
+        });
+    </script>
+</body>
+</html>
